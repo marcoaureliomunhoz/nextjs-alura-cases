@@ -1,29 +1,7 @@
-import Link from 'next/link';
-import Head from 'next/head';
 import axios from 'axios';
+import FAQScreen from '../src/screens/FAQScreen';
 
-export default function FaqPage(props) {
-
-    return (
-        <div>
-            <Head>
-                <title>FQA - Alura Cases</title>
-            </Head>
-            <h1>Alura Cases - Pag Page</h1>
-            <Link href='/'>Home</Link>
-            <ul>
-            {props.faq.map((faq, index) => (
-                <li key={`faq-${index}`}>
-                    <article>
-                        <h2>{faq.question}</h2>
-                        <p>{faq.answer}</p>
-                    </article>
-                </li>
-            ))}
-            </ul>
-        </div>
-    )
-}
+export default FAQScreen;
 
 export async function getStaticProps() {
 
